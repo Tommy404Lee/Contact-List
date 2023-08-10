@@ -3,11 +3,11 @@ import ContactList from './components/ContactList'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [selectedContactId, setSelectedContactId] = useState(null)
+  console.log(selectedContactId)
   return (
     <>
-      <ContactList />
+      {selectedContactId === null ? <ContactList setSelectedContactId={setSelectedContactId} /> : <div>Selected View</div>}
     </>
   )
 }
